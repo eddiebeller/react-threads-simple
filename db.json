@@ -1,6 +1,7 @@
 {
 	"users": [
 		{
+			"id": 0,
 			"user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
 			"username": "Eduard Beller",
 			"handle": "eddie_crimea",
@@ -18,6 +19,7 @@
 			]
 		},
 		{
+			"id": 1,
 			"user_uuid": "835568a3-cfc8-4aeb-a843-b64a6a064158",
 			"username": "Varya Z",
 			"handle": "varya",
@@ -32,6 +34,7 @@
 			]
 		},
 		{
+			"id": 2,
 			"user_uuid": "835568a1-cfc8-4aeb-a843-b64a6a0641511",
 			"username": "Simon the Cat",
 			"handle": "simon",
