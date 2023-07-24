@@ -1,0 +1,106 @@
+{
+	"users": [
+		{
+			"user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+			"username": "Eduard Beller",
+			"handle": "eddie_crimea",
+			"bio": "Hi my name is Eduard, and i am a frontend engeneer.",
+			"link": "someurl",
+			"img": "https://i.imgur.com/9J8WBpK.png",
+			"instagram_url": "https://www.instagram.com/eduardbeller/",
+			"followers": [
+				{
+					"user_uuid": "835568a3-cfc8-4aeb-a843-b64a6a064158"
+				},
+				{
+					"user_uuid": "99d9d0e9-4338-4371-a8e4-0f6db9b3a860"
+				}
+			]
+		},
+		{
+			"user_uuid": "835568a3-cfc8-4aeb-a843-b64a6a064158",
+			"username": "Varya Z",
+			"handle": "varya",
+			"bio": "Hi my name is Varya, and i am an artist.",
+			"link": "https://www.artistvarya.com",
+			"img": "https://i.imgur.com/rQVQ3jy.jpeg",
+			"instagram_url": "https://www.instagram.com/artistvarya/",
+			"followers": [
+				{
+					"user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c"
+				}
+			]
+		},
+		{
+			"user_uuid": "835568a1-cfc8-4aeb-a843-b64a6a0641511",
+			"username": "Simon the Cat",
+			"handle": "simon",
+			"bio": "Hey, im cat!",
+			"link": "https://www.simonthecat.com",
+			"img": "https://i.imgur.com/oPR4BiX.jpeg",
+			"instagram_url": "https://www.instagram.com/simoncat/",
+			"followers": [
+				{
+					"user_uuid": "835568a3-cfc8-4aeb-a843-b64a6a064158"
+				},
+				{
+					"user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c"
+				}
+			]
+		}
+	],
+	"threads": [
+		{
+			"id": 0,
+			"timestamp": "Date Mon Jul 24 2023 17:46:56 GMT+0200 (Central European Summer Time)",
+			"thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+			"thread_to": null,
+			"reply_to": null,
+			"text": "Hello world(of thread)",
+			"likes": [
+				{
+					"user_uuid": "835568a3-cfc8-4aeb-a843-b64a6a064158"
+				},
+				{
+					"user_uuid": "835568a1-cfc8-4aeb-a843-b64a6a0641511"
+				}
+			]
+		},
+		{
+			"id": 1,
+			"timestamp": "Date Mon Jul 24 2023 18:46:56 GMT+0200 (Central European Summer Time)",
+			"thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+			"thread_to": null,
+			"reply_to": null,
+			"text": "Awesome thread",
+			"likes": []
+		},
+		{
+			"id": 2,
+			"timestamp": "Date Mon Jul 24 2023 19:12:56 GMT+0200 (Central European Summer Time)",
+			"thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+			"thread_to": null,
+			"reply_to": null,
+			"text": "Awesome one!",
+			"likes": []
+		},
+		{
+			"id": 3,
+			"timestamp": "Date Mon Jul 24 2023 19:23:56 GMT+0200 (Central European Summer Time)",
+			"thread_from": "835568a3-cfc8-4aeb-a843-b64a6a064158",
+			"thread_to": null,
+			"reply_to": null,
+			"text": "Excited to annonce my first work!",
+			"likes": []
+		},
+		{
+			"id": 4,
+			"timestamp": "Date Mon Jul 24 2023 19:27:56 GMT+0200 (Central European Summer Time)",
+			"thread_from": "835568a1-cfc8-4aeb-a843-b64a6a0641511",
+			"thread_to": "835568a3-cfc8-4aeb-a843-b64a6a064158",
+			"reply_to": 3,
+			"text": "Meow!",
+			"likes": []
+		}
+	]
+}
