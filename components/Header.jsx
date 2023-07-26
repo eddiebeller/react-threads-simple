@@ -1,21 +1,23 @@
-export const Header = () => {
+/* eslint-disable react/prop-types */
+export const Header = ({ user }) => {
 	return (
 		<header className='header'>
 			<div className='header__info-container'>
 				<div className='header__user-info-container'>
-					<h1>username</h1>
+					<h1>{user.username}</h1>
 					<p>
-						handle <span className='header__threads-info'>threads.net</span>
+						{user.handle}{' '}
+						<span className='header__threads-info'>threads.net</span>
 					</p>
 				</div>
 				<div className='header__image-container image-container'>
-					<img src='' alt='profile avatar' />
+					<img src={user.img} alt='profile avatar' />
 				</div>
 			</div>
-			<p className='bio'>bio</p>
+			<p className='bio'>{user.bio}</p>
 			<div className='header__sub-info-container'>
 				<p className='header__sub-text sub-text'>
-					x followers | <a href='/'>link</a>
+					{user.followers.length} followers | <a href='/'>link</a>
 				</p>
 			</div>
 			<button
