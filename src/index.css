@@ -87,3 +87,24 @@ button.primary {
 .button-container button.current {
 	border-bottom: 2px solid #ffffff;
 }
+.feed-card {
+	border-bottom: 1px solid #727272;
+	padding: 10px 0;
+}
+.feed-card .text-container {
+	display: flex;
+	justify-content: space-between;
+}
+.feed-card .image-container {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.feed-card .image-container img {
+	height: 110%;
+}
+.feed-card .icons svg {
+	height: 20px;
+	padding: 0 5px;
+}
