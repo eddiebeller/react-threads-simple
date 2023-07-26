@@ -5,6 +5,21 @@ body {
 	color: #ffffff;
 	font-family: Arial, Helvetica, sans-serif;
 }
+svg {
+	fill: #ffffff;
+}
+h1,
+h2,
+p {
+	margin: 4px;
+}
+h1 {
+	font-size: 24px;
+}
+a {
+	text-decoration: none;
+	color: #727272;
+}
 .app {
 	position: relative;
 	display: flex;
@@ -21,11 +36,54 @@ body {
 	background-color: #262627;
 	padding: 20px;
 }
-svg {
-	fill: #ffffff;
-}
 nav {
 	display: flex;
 	justify-content: space-between;
 	padding: 20px 0;
+}
+.sub-text {
+	color: #727272;
+}
+header .image-container {
+	width: 40px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+header .image-container img {
+	height: 110%;
+}
+.header__threads-info {
+	background-color: #3b3b3b;
+	color: #727272;
+	font-size: 13px;
+	padding: 3px 6px;
+	border-radius: 20px;
+}
+.header__info-container {
+	display: flex;
+	justify-content: space-between;
+}
+button.primary {
+	border: 1px solid #3b3b3b;
+	background-color: transparent;
+	padding: 7px;
+	margin: 10px 0;
+	border-radius: 7px;
+	color: #ffffff;
+	font-weight: bold;
+	width: 100%;
+}
+.button-container button {
+	width: 50%;
+	border: none;
+	background-color: transparent;
+	padding: 7px;
+	color: #ffffff;
+	font-weight: bold;
+	border-bottom: 1px solid #3b3b3b;
+}
+
+.button-container button.current {
+	border-bottom: 2px solid #ffffff;
 }
