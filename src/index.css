@@ -126,3 +126,17 @@ button.primary {
 	height: 400px;
 	overflow-x: scroll;
 }
+.modal {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 650px;
+	width: 380px;
+	border-radius: 40px;
+	background-color: #262627;
+	padding: 20px;
+	overflow-y: scroll;
+	box-shadow: 0 54px 55px rgba(0, 0, 0, 0.25), 0 -12px 30px rgba(0, 0, 0, 0.12),
+		0 4px 6px rgba(0, 0, 0, 0.12), 0 12px 13px rgba(0, 0, 0, 0.17),
+		0 -3px 5px rgba(0, 0, 0, 0.9);
+}
