@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export const Header = ({ user }) => {
+export const Header = ({ user, viewThreadsFeed, setViewThreadsFeed }) => {
 	return (
 		<header className='header'>
 			<div className='header__info-container'>
@@ -27,8 +27,18 @@ export const Header = ({ user }) => {
 				Share Profile
 			</button>
 			<div className='button-container'>
-				<button className='current'>Threads</button>
-				<button>Replies</button>
+				<button
+					className={viewThreadsFeed ? 'current' : null}
+					onClick={() => setViewThreadsFeed(true)}
+				>
+					Threads
+				</button>
+				<button
+					className={!viewThreadsFeed ? 'current' : null}
+					onClick={() => setViewThreadsFeed(false)}
+				>
+					Replies
+				</button>
 			</div>
 		</header>
 	);
