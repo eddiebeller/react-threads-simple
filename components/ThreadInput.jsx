@@ -3,7 +3,7 @@ export const ThreadInput = () => {
 		<div>
 			<p className=''>ThreadInput</p>
 			<input type='text' />
-      <button>Submit thread</button>
+      <button className='primary'>Post</button>
 		</div>
 	);
 };

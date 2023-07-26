@@ -20,6 +20,19 @@ a {
 	text-decoration: none;
 	color: #727272;
 }
+input {
+	background-color: transparent;
+	border: 1px solid #727272;
+	padding: 10px;
+	width: 100%;
+	margin: 10px 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	color: #ffffff;
+}
+input:focus {
+	outline: none;
+}
 .app {
 	position: relative;
 	display: flex;
@@ -30,6 +43,7 @@ a {
 }
 .app_container {
 	position: relative;
+	/* min-height: 750px; */
 	height: 750px;
 	width: 380px;
 	border-radius: 40px;
@@ -107,4 +121,8 @@ button.primary {
 .feed-card .icons svg {
 	height: 20px;
 	padding: 0 5px;
+}
+.feed {
+	height: 400px;
+	overflow-x: scroll;
 }
