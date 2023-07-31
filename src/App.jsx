@@ -9,7 +9,9 @@ const App = () => {
 	const [threads, setThreads] = useState(null);
 	const [viewThreadsFeed, setViewThreadsFeed] = useState(true);
 	const [filteredThread, setFilteredThread] = useState(null);
+
 	const userId = 'b1f3a462-0ba8-4c6a-9d73-1721318f608c';
+
 	const getUser = async () => {
 		try {
 			const response = await fetch(
@@ -25,7 +27,7 @@ const App = () => {
 	const getThreads = async () => {
 		try {
 			const response = await fetch(
-				`http://localhost:3000/threads?threads_from==${userId}`
+				`http://localhost:3000/threads?threads_from=${userId}`
 			);
 			const data = await response.json();
 			setThreads(data);
@@ -34,18 +36,7 @@ const App = () => {
 		}
 	};
 
-	const getThreadsFeed = () => {
-		if (viewThreadsFeed) {
-			const standAloneThreads = threads.filter(
-				(thread) => thread.reply_to === null
-			);
-			setFilteredThread(standAloneThreads);
-		}
-		if (!viewThreadsFeed) {
-			const replyThreads = threads.filter((thread) => thread.reply_to !== null);
-			setFilteredThread(replyThreads);
-		}
-	};
+	// const getThreadsFeed = () => {};
 
 	useEffect(() => {
 		getUser();
@@ -53,7 +44,18 @@ const App = () => {
 	}, []);
 
 	useEffect(() => {
-		getThreadsFeed();
+		if (viewThreadsFeed) {
+			const standAloneThreads = threads?.filter(
+				(thread) => thread.reply_to === null
+			);
+			setFilteredThread(standAloneThreads);
+		}
+		if (!viewThreadsFeed) {
+			const replyThreads = threads?.filter(
+				(thread) => thread.reply_to !== null
+			);
+			setFilteredThread(replyThreads);
+		}
 	}, [user, threads, viewThreadsFeed]);
 
 	return (
@@ -67,7 +69,7 @@ const App = () => {
 							viewThreadsFeed={viewThreadsFeed}
 							setViewThreadsFeed={setViewThreadsFeed}
 						/>
-						<Feed />
+						<Feed user={user} filteredThread={filteredThread} />
 						{/* <Modal /> */}
 					</div>
 				</div>

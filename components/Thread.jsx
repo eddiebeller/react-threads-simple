@@ -1,19 +1,26 @@
-export const Thread = () => {
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+import { useEffect, useState } from 'react';
+import moment from 'moment';
+
+export const Thread = ({ filteredThread, user }) => {
+	const timePassed = moment().startOf('day').fromNow(filteredThread.timestamp);
 	return (
 		<article className='feed-card'>
 			<div className='text-container'>
 				<div>
 					<div className='image-container'>
-						<img src='' alt='profile avatar' />
+						<img src={user.img} alt='profile avatar' />
 					</div>
 					<div>
 						<p className=''>
-							<strong>handle</strong>
+							<strong>{user.handle}</strong>
 						</p>
-						<p className=''>text</p>
+						<p className=''>{filteredThread.text}</p>
 					</div>
 				</div>
-				<p className='time sub-text'>time</p>
+				<p className='time sub-text'>{timePassed}</p>
 			</div>
 			<div className='icons'>
 				<svg
@@ -54,7 +61,8 @@ export const Thread = () => {
 					<path d='M0 12l11 3.1 7-8.1-8.156 5.672-4.312-1.202 15.362-7.68-3.974 14.57-3.75-3.339-2.17 2.925v-.769l-2-.56v7.383l4.473-6.031 4.527 4.031 6-22z' />
 				</svg>
 				<p className='sub-text'>
-					<span>X replies</span> | <span>X likes</span>
+					<span>X replies</span> |{' '}
+					<span>{filteredThread.likes.length} likes</span>
 				</p>
 			</div>
 		</article>
