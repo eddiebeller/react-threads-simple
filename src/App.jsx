@@ -38,13 +38,6 @@ const App = () => {
 		}
 	};
 
-	// const getThreadsFeed = () => {};
-
-	useEffect(() => {
-		getUser();
-		getThreads();
-	}, []);
-
 	const getThreadsFeed = () => {
 		if (viewThreadsFeed) {
 			const standAloneThreads = threads?.filter(
@@ -61,7 +54,12 @@ const App = () => {
 	};
 
 	useEffect(() => {
-		getThreadsFeed;
+		getUser();
+		getThreads();
+	}, []);
+
+	useEffect(() => {
+		getThreadsFeed();
 	}, [user, threads, viewThreadsFeed]);
 
 	return (
