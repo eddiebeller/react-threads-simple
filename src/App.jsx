@@ -73,8 +73,13 @@ const App = () => {
 							viewThreadsFeed={viewThreadsFeed}
 							setViewThreadsFeed={setViewThreadsFeed}
 						/>
-						<Feed user={user} filteredThread={filteredThread} />
-						{openModal && <Modal />}
+						<Feed
+							getThreads={getThreads}
+							user={user}
+							setOpenModal={setOpenModal}
+							filteredThread={filteredThread}
+						/>
+						{openModal && <Modal user={user} setOpenModal={setOpenModal} />}
 						<div onClick={() => setOpenModal(true)}>
 							<WriteIcon />
 						</div>
