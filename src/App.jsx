@@ -3,12 +3,14 @@ import { Nav } from '../components/Nav';
 import { Header } from '../components/Header';
 import { Feed } from '../components/Feed';
 import { Modal } from '../components/Modal';
+import { WriteIcon } from '../components/WriteIcon';
 
 const App = () => {
 	const [user, setUser] = useState(null);
 	const [threads, setThreads] = useState(null);
 	const [viewThreadsFeed, setViewThreadsFeed] = useState(true);
 	const [filteredThread, setFilteredThread] = useState(null);
+	const [openModal, setOpenModal] = useState(false);
 
 	const userId = 'b1f3a462-0ba8-4c6a-9d73-1721318f608c';
 
@@ -43,7 +45,7 @@ const App = () => {
 		getThreads();
 	}, []);
 
-	useEffect(() => {
+	const getThreadsFeed = () => {
 		if (viewThreadsFeed) {
 			const standAloneThreads = threads?.filter(
 				(thread) => thread.reply_to === null
@@ -56,6 +58,10 @@ const App = () => {
 			);
 			setFilteredThread(replyThreads);
 		}
+	};
+
+	useEffect(() => {
+		getThreadsFeed;
 	}, [user, threads, viewThreadsFeed]);
 
 	return (
@@ -70,7 +76,10 @@ const App = () => {
 							setViewThreadsFeed={setViewThreadsFeed}
 						/>
 						<Feed user={user} filteredThread={filteredThread} />
-						{/* <Modal /> */}
+						{openModal && <Modal />}
+						<div onClick={() => setOpenModal(true)}>
+							<WriteIcon />
+						</div>
 					</div>
 				</div>
 			)}
