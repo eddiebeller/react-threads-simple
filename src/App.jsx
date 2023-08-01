@@ -11,6 +11,8 @@ const App = () => {
 	const [viewThreadsFeed, setViewThreadsFeed] = useState(true);
 	const [filteredThread, setFilteredThread] = useState(null);
 	const [openModal, setOpenModal] = useState(false);
+	const [interactingThread, setInteractingThread] = useState(null);
+	const [modalFeedThreads, setModalFeedThreads] = useState(null);
 
 	const userId = 'b1f3a462-0ba8-4c6a-9d73-1721318f608c';
 
@@ -53,6 +55,18 @@ const App = () => {
 		}
 	};
 
+	const getReplies = async () => {
+		try {
+			const response = await fetch(
+				`http://localhost:3000/threads?reply_to=${interactingThread?.id}`
+			);
+			const data = await response.json();
+			setModalFeedThreads(data);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	useEffect(() => {
 		getUser();
 		getThreads();
@@ -61,6 +75,12 @@ const App = () => {
 	useEffect(() => {
 		getThreadsFeed();
 	}, [user, threads, viewThreadsFeed]);
+
+	useEffect(() => {
+		getReplies();
+	}, [interactingThread]);
+
+	console.log('modalFeedThread', modalFeedThreads);
 
 	return (
 		<>
@@ -78,8 +98,15 @@ const App = () => {
 							user={user}
 							setOpenModal={setOpenModal}
 							filteredThread={filteredThread}
+							setInteractingThread={setInteractingThread}
 						/>
-						{openModal && <Modal user={user} setOpenModal={setOpenModal} />}
+						{openModal && (
+							<Modal
+								user={user}
+								setOpenModal={setOpenModal}
+								modalFeedThreads={modalFeedThreads}
+							/>
+						)}
 						<div onClick={() => setOpenModal(true)}>
 							<WriteIcon />
 						</div>

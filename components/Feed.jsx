@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Thread } from './Thread';
-export const Feed = ({ filteredThread, user, setOpenModal, getThreads }) => {
+export const Feed = ({ filteredThread, user, setOpenModal, getThreads, setInteractingThread}) => {
 	return (
 		<div className='feed'>
 			{filteredThread?.map((filteredThread) => (
@@ -10,6 +10,7 @@ export const Feed = ({ filteredThread, user, setOpenModal, getThreads }) => {
 					user={user}
 					filteredThread={filteredThread}
 					setOpenModal={setOpenModal}
+					setInteractingThread={setInteractingThread}
 				/>
 			))}
 		</div>

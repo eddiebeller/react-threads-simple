@@ -5,7 +5,7 @@
       "user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
       "username": "Eduard Beller",
       "handle": "eddie_crimea",
-      "bio": "Hi my name is Eduard, and i am a frontend engeneer.",
+      "bio": "Hi my name is Eduard, and i am a frontend Engineer.",
       "link": "someurl",
       "img": "https://gravatar.com/avatar/ba3309409d3157126cf2dd347326daa0?s=400&d=robohash&r=x",
       "instagram_url": "https://www.instagram.com/eduardbeller/",
@@ -36,11 +36,11 @@
     {
       "id": 2,
       "user_uuid": "835568a1-cfc8-4aeb-a843-b64a6a0641511",
-      "username": "Simon the Cat",
-      "handle": "simon",
+      "username": "Symon the Cat",
+      "handle": "symon the cat",
       "bio": "Hey, im cat!",
       "link": "https://www.simonthecat.com",
-      "img": "https://i.imgur.com/oPR4BiX.jpeg",
+      "img": "https://a-z-animals.com/media/2019/11/Birman-isolated.jpg",
       "instagram_url": "https://www.instagram.com/simoncat/",
       "followers": [
         {
