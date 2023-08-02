@@ -95,6 +95,12 @@ const App = () => {
 		}
 	};
 
+	const handleClick = () => {
+		setModalFeedThreads(null);
+		setInteractingThread(null);
+		setOpenModal(true);
+	};
+
 	useEffect(() => {
 		getUser();
 		getThreads();
@@ -136,7 +142,7 @@ const App = () => {
 								postThread={postThread}
 							/>
 						)}
-						<div onClick={() => setOpenModal(true)}>
+						<div onClick={handleClick}>
 							<WriteIcon />
 						</div>
 					</div>

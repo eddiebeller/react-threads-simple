@@ -54,7 +54,7 @@
   ],
   "threads": [
     {
-      "id": 0,
+      "id": 1,
       "timestamp": "Date Mon Jul 24 2023 17:46:56 GMT+0200 (Central European Summer Time)",
       "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
       "thread_to": null,
@@ -67,19 +67,6 @@
         {
           "user_uuid": "835568a1-cfc8-4aeb-a843-b64a6a0641511"
         },
-        {
-          "user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "timestamp": "Date Mon Jul 24 2023 18:46:56 GMT+0200 (Central European Summer Time)",
-      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
-      "thread_to": null,
-      "reply_to": null,
-      "text": "Awesome thread",
-      "likes": [
         {
           "user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c"
         }
@@ -243,6 +230,37 @@
         }
       ],
       "id": 19
+    },
+    {
+      "timestamp": "2023-08-02T08:46:03.695Z",
+      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "thread_to": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "reply_to": null,
+      "text": "Hi im a standalone post",
+      "likes": [
+        {
+          "user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c"
+        }
+      ],
+      "id": 20
+    },
+    {
+      "timestamp": "2023-08-02T08:46:21.875Z",
+      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "thread_to": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "reply_to": 20,
+      "text": "hhiiiiii",
+      "likes": [],
+      "id": 21
+    },
+    {
+      "timestamp": "2023-08-02T08:50:24.749Z",
+      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "thread_to": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "reply_to": 1,
+      "text": "heya",
+      "likes": [],
+      "id": 22
     }
   ]
 }
