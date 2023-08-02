@@ -9,10 +9,11 @@ const App = () => {
 	const [user, setUser] = useState(null);
 	const [threads, setThreads] = useState(null);
 	const [viewThreadsFeed, setViewThreadsFeed] = useState(true);
-	const [filteredThread, setFilteredThread] = useState(null);
+	const [filteredThreads, setFilteredThreads] = useState(null);
 	const [openModal, setOpenModal] = useState(false);
 	const [interactingThread, setInteractingThread] = useState(null);
 	const [modalFeedThreads, setModalFeedThreads] = useState(null);
+	const [text, setText] = useState('');
 
 	const userId = 'b1f3a462-0ba8-4c6a-9d73-1721318f608c';
 
@@ -45,13 +46,13 @@ const App = () => {
 			const standAloneThreads = threads?.filter(
 				(thread) => thread.reply_to === null
 			);
-			setFilteredThread(standAloneThreads);
+			setFilteredThreads(standAloneThreads);
 		}
 		if (!viewThreadsFeed) {
 			const replyThreads = threads?.filter(
 				(thread) => thread.reply_to !== null
 			);
-			setFilteredThread(replyThreads);
+			setFilteredThreads(replyThreads);
 		}
 	};
 
@@ -62,6 +63,33 @@ const App = () => {
 			);
 			const data = await response.json();
 			setModalFeedThreads(data);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
+	const postThread = async () => {
+		const thread = {
+			timestamp: new Date(),
+			thread_from: user.user_uuid,
+			thread_to: user.user_uuid || null,
+			reply_to: interactingThread?.id || null,
+			text: text,
+			likes: [],
+		};
+		try {
+			const response = await fetch(`http://localhost:3000/threads`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(thread),
+			});
+			const result = await response.json();
+			console.log('Posted', result);
+			getThreads();
+			getReplies();
+			setText('');
 		} catch (error) {
 			console.error(error);
 		}
@@ -80,8 +108,6 @@ const App = () => {
 		getReplies();
 	}, [interactingThread]);
 
-	console.log('modalFeedThread', modalFeedThreads);
-
 	return (
 		<>
 			{user && (
@@ -97,7 +123,7 @@ const App = () => {
 							getThreads={getThreads}
 							user={user}
 							setOpenModal={setOpenModal}
-							filteredThread={filteredThread}
+							filteredThreads={filteredThreads}
 							setInteractingThread={setInteractingThread}
 						/>
 						{openModal && (
@@ -105,6 +131,9 @@ const App = () => {
 								user={user}
 								setOpenModal={setOpenModal}
 								modalFeedThreads={modalFeedThreads}
+								text={text}
+								setText={setText}
+								postThread={postThread}
 							/>
 						)}
 						<div onClick={() => setOpenModal(true)}>

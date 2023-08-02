@@ -11,6 +11,8 @@ export const Thread = ({
 	getThreads,
 	setInteractingThread,
 }) => {
+	const [replyLength, setReplyLength] = useState(null);
+
 	const timePassed = moment().startOf('day').fromNow(filteredThread.timestamp);
 
 	const handleClick = () => {
@@ -45,18 +47,35 @@ export const Thread = ({
 			}
 		}
 	};
+
+	const getRepliesLength = async () => {
+		try {
+			const response = await fetch(
+				`http://localhost:3000/threads?reply_to=${filteredThread?.id}`
+			);
+			const data = await response.json();
+			setReplyLength(data.length);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
+	useEffect(() => {
+		getRepliesLength();
+	}, [filteredThread]);
+
 	return (
 		<article className='feed-card'>
 			<div className='text-container'>
 				<div>
 					<div className='image-container'>
-						<img src={user.img} alt='profile avatar' />
+						<img src={user?.img} alt='profile avatar' />
 					</div>
 					<div>
 						<p className=''>
-							<strong>{user.handle}</strong>
+							<strong>{user?.handle}</strong>
 						</p>
-						<p className=''>{filteredThread.text}</p>
+						<p className=''>{filteredThread?.text}</p>
 					</div>
 				</div>
 				<p className='time sub-text'>{timePassed}</p>
@@ -102,7 +121,7 @@ export const Thread = ({
 					<path d='M0 12l11 3.1 7-8.1-8.156 5.672-4.312-1.202 15.362-7.68-3.974 14.57-3.75-3.339-2.17 2.925v-.769l-2-.56v7.383l4.473-6.031 4.527 4.031 6-22z' />
 				</svg>
 				<p className='sub-text'>
-					<span onClick={handleClick}>X replies</span> |{' '}
+					<span onClick={handleClick}>{replyLength} replies</span> |{' '}
 					<span>{filteredThread.likes.length} likes</span>
 				</p>
 			</div>
