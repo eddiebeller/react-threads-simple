@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Nav } from '../components/Nav';
-import { Header } from '../components/Header';
-import { Feed } from '../components/Feed';
-import { Modal } from '../components/Modal';
-import { WriteIcon } from '../components/WriteIcon';
+import { Nav } from './components/Nav';
+import { Header } from './components/Header';
+import { Feed } from './components/Feed';
+import { Modal } from './components/Modal';
+import { WriteIcon } from './components/WriteIcon';
 
 const App = () => {
 	const [user, setUser] = useState(null);

@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 export const Nav = ({ url }) => {
 	return (
 		<nav className='nav'>

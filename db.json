@@ -261,6 +261,55 @@
       "text": "heya",
       "likes": [],
       "id": 22
+    },
+    {
+      "timestamp": "2023-08-03T18:13:01.990Z",
+      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "thread_to": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "reply_to": 20,
+      "text": "yooo",
+      "likes": [],
+      "id": 23
+    },
+    {
+      "timestamp": "2023-08-03T18:13:14.626Z",
+      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "thread_to": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "reply_to": null,
+      "text": "This is new Standalone post",
+      "likes": [],
+      "id": 24
+    },
+    {
+      "timestamp": "2023-08-03T18:14:21.739Z",
+      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "thread_to": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "reply_to": null,
+      "text": "This is post that i want to test modal behavior",
+      "likes": [
+        {
+          "user_uuid": "b1f3a462-0ba8-4c6a-9d73-1721318f608c"
+        }
+      ],
+      "id": 25
+    },
+    {
+      "timestamp": "2023-08-03T18:14:34.192Z",
+      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "thread_to": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "reply_to": 25,
+      "text": "it works!",
+      "likes": [],
+      "id": 26
+    },
+    {
+      "timestamp": "2023-08-03T18:15:01.264Z",
+      "thread_from": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "thread_to": "b1f3a462-0ba8-4c6a-9d73-1721318f608c",
+      "reply_to": 25,
+      "text": "yaya",
+      "likes": [],
+      "id": 27
     }
   ]
 }
