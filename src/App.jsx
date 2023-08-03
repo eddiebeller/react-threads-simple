@@ -90,6 +90,7 @@ const App = () => {
 			getThreads();
 			getReplies();
 			setText('');
+			setOpenModal(false)
 		} catch (error) {
 			console.error(error);
 		}
